@@ -9,4 +9,4 @@ Check out our [official documentation](https://www.devtodev.com/help/135/unreal_
 
 Changelog
 ---------
-See [wiki page](https://github.com/devtodev-analytics/unreal-sdk/releases).
+See [releases](https://github.com/devtodev-analytics/unreal-sdk/releases).
