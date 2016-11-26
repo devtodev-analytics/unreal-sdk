@@ -1,0 +1,80 @@
+#pragma once
+
+#include <string>
+#include <map>
+#include <vector>
+
+#if PLATFORM_IOS
+#import <Foundation/Foundation.h>
+
+@interface DevToDevUE4 : NSObject
++(id) sharedInstance;
+@end
+#endif
+
+namespace devtodev {
+	enum DTDGender
+	{
+		DTDUnknown = 0,
+		DTDMale = 1,
+		DTDFemale = 2
+	};
+
+	enum DTDAccrualType
+	{
+		DTDEarned, 
+		DTDPurchased
+	};
+
+	class DevToDev
+	{
+	public:
+		static void SetActiveLog(bool isActive);
+
+    	static void Initialize(const std::string& appKey, const std::string& appSecret);
+
+    	static void SendBufferedEvents();
+    
+    	static void CustomEvent(const std::string& name);
+
+    	static void CustomEvent(const std::string& name, const std::map<std::string, std::string>& params);
+
+    	static void CurrencyAccrual(int amount, const std::string& currencyName, DTDAccrualType accrualType);
+
+    	static void InAppPurchase(const std::string& purchaseId, const std::string& purchaseType, int purchaseAmount, int purchasePrice, const std::string& purchaseCurrency); 
+    
+    	//TODO IAP Params
+
+    	static void TutorialCompleted(int state);
+
+	    static void LevelUp(int level);
+
+		static void LevelUp(int level, const std::map<std::string, int>& resourses);
+
+	    static void SetCurrentLevel(int level);
+
+	    static void RealPayment(const std::string& transactionId, float inAppPrice, const std::string& inAppName, const std::string& inAppCurrencyISOCode);
+
+	    static void SocialNetworkConnect(const std::string& name);
+
+	    static void SocialNetworkPost(const std::string& name, const std::string& reason);
+
+	    static void Age(int age);
+
+	    static void Gender(DTDGender gender);
+
+	    static void Cheater(bool cheater);
+
+	    static void SetUserId(const std::string& name);
+
+	    static void ReplaceUserId(const std::string& from, const std::string& to);
+
+	    static const char * GetUserId();
+	};
+
+	class DevToDevPushManager
+	{
+	public:
+		static void SetDelegate();
+	};
+}
