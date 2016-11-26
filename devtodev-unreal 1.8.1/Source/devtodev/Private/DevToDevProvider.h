@@ -1,5 +1,8 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
+#include "CoreUObject.h"
+#include "Runtime/Analytics/Analytics/Public/Interfaces/IAnalyticsProvider.h"
+
 #pragma once
 
 class FAnalyticsProviderDevToDev : public IAnalyticsProvider
@@ -15,7 +18,7 @@ public:
 	virtual bool StartSession(const TArray<FAnalyticsEventAttribute>& Attributes) override;
 
 	virtual void EndSession() override;
-	void FlushEvents() override;
+	virtual void FlushEvents() override;
 
 	virtual void SetUserID(const FString& InUserID) override;
 	virtual FString GetUserID() const override;

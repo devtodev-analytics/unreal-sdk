@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Runtime/Analytics/Analytics/Public/Interfaces/IAnalyticsProviderModule.h"
+#include "IAnalyticsProviderModule.h"
 #include "DevToDevProvider.h"
 
 class IAnalyticsProvider;
@@ -21,7 +21,7 @@ public:
 	 * Creates the analytics provider given a configuration delegate.
 	 * The keys required exactly match the field names in the Config object. 
 	 */
-	virtual TSharedPtr<IAnalyticsProvider> CreateAnalyticsProvider(const FAnalytics::FProviderConfigurationDelegate& GetConfigValue) const override;
+	virtual TSharedPtr<IAnalyticsProvider> CreateAnalyticsProvider(const FAnalyticsProviderConfigurationDelegate& GetConfigValue) const override;
 	
 	struct FDevToDevProjectSettings
 	{

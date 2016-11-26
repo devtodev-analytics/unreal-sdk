@@ -53,7 +53,7 @@ FAnalyticsDevToDev::FDevToDevProjectSettings FAnalyticsDevToDev::LoadProjectSett
 	return Settings;
 }
 
-TSharedPtr<IAnalyticsProvider> FAnalyticsDevToDev::CreateAnalyticsProvider(const FAnalytics::FProviderConfigurationDelegate& GetConfigValue) const
+TSharedPtr<IAnalyticsProvider> FAnalyticsDevToDev::CreateAnalyticsProvider(const FAnalyticsProviderConfigurationDelegate& GetConfigValue) const
 {		
 	if (!DevToDevProvider->IsInitialized()) 
 	{
