@@ -9,7 +9,7 @@ namespace UnrealBuildTool.Rules
 	{
         public DevToDev(TargetInfo Target)
 		{
-            var ModulePath = Path.GetDirectoryName(RulesCompiler.GetModuleFilename(this.GetType().Name));
+            var ModulePath = ModuleDirectory;
             var DTDPath = Path.GetFullPath(Path.Combine(ModulePath, "..", "ThirdParty"));
             var libPath = Path.Combine(DTDPath, "lib");
 
