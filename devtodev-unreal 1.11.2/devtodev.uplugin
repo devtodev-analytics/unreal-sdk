@@ -1,0 +1,26 @@
+{
+	"FileVersion" : 1,
+	
+	"FriendlyName" : "DevToDev",
+	"Version" : 3,
+	"VersionName" : "1.11.2",
+	"CreatedBy" : "DevToDev",
+	"CreatedByURL" : "https://www.devtodev.com",
+	"EngineVersion" : "4.16",
+	"Description" : "DevToDev is a free analytics platform that helps game developers understand their players' behaviour by delivering relevant insights.",
+	"Category" : "Analytics",
+	
+	"Modules" :
+	[
+		{
+            "Name" : "DevToDev",
+            "Type" : "Runtime",
+            "LoadingPhase" : "PreDefault"
+        },
+        {
+            "Name" : "DevToDevEditor",
+            "Type" : "Developer",
+            "LoadingPhase" : "PreDefault"
+        }
+	]
+}
