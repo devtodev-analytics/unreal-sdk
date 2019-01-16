@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--devtodev plugin additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+    <init>
+        <log text="DevToDev init"/>
+    </init>
+    
+    <!-- optional additions to proguard -->
+    <proguardAdditions>
+        <insert>
+            -keep class com.devtodev.** { *; }
+            -dontwarn com.devtodev.**
+        </insert>
+    </proguardAdditions>
+    
+    <!-- optional updates applied to AndroidManifest.xml -->
+    <androidManifestUpdates>
+        <addPermission android:name="android.permission.INTERNET"/>
+        <addPermission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    </androidManifestUpdates>
+    
+    <AARImports>
+        <insertValue value="repository $S(PluginDir)/../ThirdParty/Android/lib/"/>
+        <insertNewline/>
+        <insert>
+            com.devtodev,analytics,1.13.6
+        </insert>
+        <insertNewline/>
+    </AARImports>
+    
+    <resourceCopies>
+        <!-- Copy the generated resource file to be packaged -->
+        <copyDir src="$S(PluginDir)/../ThirdParty/Android/lib"
+        dst="$S(BuildDir)" />
+    </resourceCopies>
+    
+    <buildGradleAdditions>
+        <insert>
+            dependencies {
+                implementation('com.devtodev:analytics:1.13.6')
+            }
+        </insert>
+    </buildGradleAdditions>
+</root>

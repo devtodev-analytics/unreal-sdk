@@ -1,6 +1,6 @@
 Latest Version 
 --------------
-##### _Dec 14th, 2018_ - [v1.2](https://github.com/devtodev-analytics/unreal-sdk/releases/latest)
+##### _Jan 16th, 2019_ - [v1.2.1](https://github.com/devtodev-analytics/unreal-sdk/releases/latest)
 
 
 Getting Started
