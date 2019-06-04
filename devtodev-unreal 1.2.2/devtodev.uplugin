@@ -10,7 +10,7 @@
 	"DocsURL": "https://www.devtodev.com/wiki",
 	"MarketplaceURL" : "com.epicgames.launcher://ue/marketplace/content/78db84591beb4144976f00380316d78b",
 	"SupportURL": "https://github.com/devtodev-analytics/unreal-sdk/issues",
-	"EngineVersion": "4.21.0",
+	"EngineVersion": "4.22",
 	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"Installed": false,
