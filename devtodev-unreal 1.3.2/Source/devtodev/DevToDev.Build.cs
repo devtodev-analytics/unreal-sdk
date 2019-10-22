@@ -11,7 +11,7 @@ namespace UnrealBuildTool.Rules {
             if (Target.Platform == UnrealTargetPlatform.IOS)
 			{                
                 PublicAdditionalFrameworks.Add(
-						new Framework(
+						new UEBuildFramework(
 							"devtodev",
 							"../../ThirdParty/iOS/devtodev.embeddedframework.zip"
 						)
