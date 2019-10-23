@@ -26,5 +26,11 @@
 			"LoadingPhase": "PreDefault",
 			"WhitelistPlatforms" : [ "Android", "IOS", "Win32", "Win64", "Mac" ]
 		}
-	]
+	],
+  "Plugins": [
+    {
+      "Name": "AnalyticsBlueprintLibrary",
+      "Enabled": true
+    }
+  ]
 }

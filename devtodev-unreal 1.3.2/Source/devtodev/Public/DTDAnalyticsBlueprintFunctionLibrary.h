@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "AnalyticsBlueprintLibrary.h"
 #include "UObject/Object.h"
 #include "DTDAnalyticsBlueprintFunctionLibrary.generated.h"
 
