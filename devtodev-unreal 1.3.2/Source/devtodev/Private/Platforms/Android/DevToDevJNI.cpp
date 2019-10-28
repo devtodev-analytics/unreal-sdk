@@ -313,7 +313,7 @@ namespace devtodev {
             if (jMethod) {
                 jstring j_purchaseId = env->NewStringUTF(purchaseId.c_str());
                 jstring j_purchaseType = env->NewStringUTF(purchaseType.c_str());
-                jstring j_purchaseCurrency = env->NewStringUTF(purchaseType.c_str());
+                jstring j_purchaseCurrency = env->NewStringUTF(purchaseCurrency.c_str());
 
                 env->CallStaticVoidMethod(jClass, jMethod, j_purchaseId, j_purchaseType, purchaseAmount, purchasePrice, j_purchaseCurrency);
 
