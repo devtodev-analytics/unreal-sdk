@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--DevToDev plugin additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <init>
+        <log text="DevToDev init"/>
+    </init>
+    
+    <!-- optional additions to proguard -->
+    <proguardAdditions>
+        <insert>
+            -keep class com.devtodev.** { *; }
+            -dontwarn com.devtodev.**
+        </insert>
+    </proguardAdditions>
+
+    <!--optional updates applied to AndroidManifest.xml-->
+    <androidManifestUpdates>
+        <addPermission android:name="android.permission.INTERNET"/>
+        <addPermission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <addElements tag="application">
+            <service
+                android:name="com.devtodev.push.logic.DTDFcmMessagingService"
+                android:exported="false">
+                <intent-filter android:priority="999">
+                    <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                </intent-filter>
+            </service>
+            
+            <receiver
+                android:name="com.devtodev.push.logic.PushClickReceiver"
+                android:enabled="true"
+                android:exported="true">
+                <intent-filter>
+                    <action android:name="com.devtodev.android.push.CLICKED" />
+                </intent-filter>
+            </receiver>
+        </addElements>
+    </androidManifestUpdates>
+    
+    
+    <AARImports>
+        <insertValue value="repository $S(PluginDir)/../ThirdParty/Android/lib/"/>
+        <insertNewline/>
+        <insert>
+            
+            com.google.android.gms,play-services-auth,16.0.0
+            com.google.android.gms,play-services-games,16.0.0
+            com.google.android.gms,play-services-plus,16.0.0
+            com.google.android.gms,play-services-nearby,16.0.0
+            
+            com.google.firebase,firebase-core,16.0.7
+            com.google.firebase,firebase-messaging,17.0.4
+            
+            com.devtodev,android,1.14.7
+        </insert>
+    </AARImports>
+    
+    <resourceCopies>
+        <!-- Copy the generated resource file to be packaged -->
+        <copyDir src="$S(PluginDir)/../ThirdParty/Android/lib"
+        dst="$S(BuildDir)" />
+    </resourceCopies>
+    
+    <gradleCopies>
+        <copyFile src="$S(PluginDir)/../ThirdParty/Android/google-services.json" dst="$S(BuildDir)/gradle/app/google-services.json" force="false"/>
+    </gradleCopies>
+    
+    <!-- Project gradle -->
+    <buildscriptGradleAdditions>
+        <insert>
+            dependencies {
+            classpath 'com.google.gms:google-services:4.0.0'
+            }
+        </insert>
+    </buildscriptGradleAdditions>
+    
+    <!-- app grandle -->
+    <buildGradleAdditions>
+        <insert>
+            dependencies {
+            implementation 'com.devtodev:android:1.14.7'
+            implementation 'com.google.firebase:firebase-core:16.0.7'
+            implementation 'com.google.firebase:firebase-messaging:17.4.0'
+            implementation('com.google.android.gms:play-services-gcm:16.0.0')
+            }
+            apply plugin: 'com.google.gms.google-services'
+        </insert>
+    </buildGradleAdditions>
+    
+</root>
