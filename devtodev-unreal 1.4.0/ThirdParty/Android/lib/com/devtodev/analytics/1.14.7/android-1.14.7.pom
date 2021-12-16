@@ -1,6 +1,0 @@
-<dependency>
-  <groupId>com.devtodev</groupId>
-  <artifactId>android</artifactId>
-  <version>1.14.7</version>
-  <type>pom</type>
-</dependency>
