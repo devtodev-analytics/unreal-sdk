@@ -2,6 +2,9 @@ Latest Version
 --------------
 ##### _December 16, 2021_ - [v1.4.1](https://github.com/devtodev-analytics/unreal-sdk/releases/latest)
 
+**This generation of the SDK is deprecated and is no longer supported.**
+You can find the current version here: https://github.com/devtodev-analytics/unreal-sdk-2.0
+
 
 Getting Started
 ---------------
